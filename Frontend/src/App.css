@@ -1,0 +1,12 @@
+.underAnimate {
+  background-size: 0% 3px;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  transition: all 300ms ease;
+  cursor: pointer;
+}
+
+.underAnimate:hover {
+  background-size: 100% 3px;
+  /* color: rgba(255, 255, 255, 0.75); */
+}

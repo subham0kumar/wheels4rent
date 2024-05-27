@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container-concentric {
+  /* width: 100%; */
+  /* height: 100%; */
+  --s: 150px; /* control the size */
+  --c1: #ffffff;
+  --c2: #f3f1ffa0;
+
+  --_g: var(--c1) 0% 5%, var(--c2) 6% 15%, var(--c1) 16% 25%, var(--c2) 26% 35%,
+    var(--c1) 36% 45%, var(--c2) 46% 55%, var(--c1) 56% 65%, var(--c2) 66% 75%,
+    var(--c1) 76% 85%, var(--c2) 86% 95%, #0000 96%;
+  background: radial-gradient(50% 50% at 100% 0, var(--_g)),
+    radial-gradient(50% 50% at 0 100%, var(--_g)),
+    radial-gradient(50% 50%, var(--_g)),
+    radial-gradient(50% 50%, var(--_g)) calc(var(--s) / 2) calc(var(--s) / 2)
+      var(--c1);
+  background-size: var(--s) var(--s);
+}
+
+.ReactCollapse--collapse {
+  transition: height 300ms;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #e0e7ff;
+  border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #5246e5;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #8a81f8;
+}
+
+.spikes {
+  position: relative;
+  background: #e2e0ff;
+  height: fit;
+  left: 50%;
+  translate: -50%;
+  width: 98.95vw;
+}
+
+/* .spikes::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  left: -0%;
+  top: 100%;
+  z-index: 10;
+  display: block;
+  height: 25px;
+  background-size: 25px 100%;
+  background-image: linear-gradient(135deg, #e2e0ff 25%, transparent 25%),
+    linear-gradient(225deg, #e2e0ff 25%, transparent 25%);
+  background-position: 0 0;
+} */
