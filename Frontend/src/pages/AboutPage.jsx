@@ -12,7 +12,7 @@ const AboutPage = () => {
       <Banner PageTitle={"About"} />
       <div className="mx-40">
         <div className="flex font-normal mr-20 mt-20">
-          <img src="src/static/sapiens.png" width={650} alt="work" />
+          <img src="/static/sapiens.png" width={650} alt="work" />
 
           <div className="pt-10 space-y-4">
             <h4 className="text-2xl font-semibold">About Company</h4>
@@ -36,7 +36,7 @@ const AboutPage = () => {
               </span>
               <span className="flex flex-col items-center ">
                 <img
-                  src="src/static/icons/garage-house.png"
+                  src="\static\Icons\garage-house.png"
                   alt="garage-house"
                   width={60}
                 />

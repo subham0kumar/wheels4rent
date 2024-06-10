@@ -1,24 +1,69 @@
-import React, { useState } from "react";
+import React, { useId, useState } from "react";
 import { FaCar } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { MdDateRange } from "react-icons/md";
 import Button from "../Util/Button";
+import ReserveRideModal from "../Util/ReserveRideModal";
 
-const BookTrip = () => {
+const BookTrip = React.forwardRef((props, ref) => {
   const [pickupLocation, setPickupLocation] = useState("");
   const [dropLocation, setDropLocation] = useState("");
-  const [pickupDate, setPickupDate] = useState(new Date());
-  const [dropDate, setDropDate] = useState(new Date());
+  const [pickupDate, setPickupDate] = useState("");
+  const [dropDate, setDropDate] = useState("");
   const [car, setCar] = useState("");
+  const [showModal, setShowModal] = useState(false);
+  const [formDetails, setFormDetails] = useState({
+    from: "Chitra",
+    to: "New Town",
+    pickOn: "",
+    dropOn: "",
+    car: "Tiago",
+  });
+
+  const handleInput = () => {
+    setFormDetails({
+      from: pickupLocation,
+      to: dropLocation,
+      pickOn: pickupDate,
+      dropOn: dropDate,
+      car: car,
+    });
+    setPickupLocation("");
+    setDropLocation("");
+    setPickupDate("");
+    setDropDate("");
+    setCar("");
+  };
+  const handleBookTrip = (e) => {
+    e.preventDefault();
+    window.scrollTo({ left: 0, top: 0, behavior: "smooth" });
+    handleInput();
+    setShowModal(true);
+  };
+
+  if (showModal) {
+    document.body.classList.add("overflow-y-hidden");
+  } else {
+    document.body.classList.remove("overflow-y-hidden");
+  }
+
   return (
-    <section className="w-full font-poppins py-10 my-10 shadow-[0_10px_15px_0_rgba(54,44,166,0.5)] rounded-lg container-concentric z-[99999999]">
+    <section
+      ref={ref}
+      className="w-full font-poppins py-10 my-10 shadow-[0_10px_15px_0_rgba(54,44,166,0.5)] rounded-lg container-concentric z-30"
+    >
+      <ReserveRideModal
+        open={showModal}
+        handleOpen={setShowModal}
+        rideDetails={formDetails}
+      />
       <label htmlFor="bookRide" className="px-10 text-xl font-bold">
         Book a Ride
       </label>
       <form
         id="bookRide"
-        onSubmit={(e) => e.preventDefault()}
-        className="grid grid-cols-3 grid-rows-2 gap-8 p-10"
+        onSubmit={handleBookTrip}
+        className="grid grid-cols-3 grid-rows-2 gap-8 px-10 py-8"
       >
         {/* Car Select  */}
         <div className="h-20 gap-2 flex flex-col items-start justify-center col-span-1">
@@ -30,20 +75,21 @@ const BookTrip = () => {
             Select a Car
           </label>
           <select
+            required
             name="carSelect"
             id="carSelect"
             className="p-2 h-full w-full rounded border-2 outline-none border-Gbay-700"
-            defaultValue={"Default"}
+            value={car}
             onChange={(e) => setCar(e.target.value)}
           >
-            <option hidden value="Default">
+            <option hidden value="">
               Select A Car
             </option>
-            <option value="tiago">Tata Tiago</option>
-            <option value="scorpio">Mahindra Scorpio</option>
-            <option value="fortuner">Totyota Fortuner</option>
-            <option value="bmw">BMW</option>
-            <option value="hondaCity">Honda City</option>
+            <option value="Tiago">Tata Tiago</option>
+            <option value="Scorpio">Mahindra Scorpio</option>
+            <option value="Fortuner">Totyota Fortuner</option>
+            <option value="M340i">BMW</option>
+            <option value="City">Honda City</option>
           </select>
         </div>
 
@@ -57,20 +103,21 @@ const BookTrip = () => {
             Pick-Up Point
           </label>
           <select
+            required
             name="pickLocationSelect"
             id="pickLocationSelect"
             className="p-2 h-full w-full rounded border-2 outline-none border-Gbay-700"
-            defaultValue={"Default"}
+            value={pickupLocation}
             onChange={(e) => setPickupLocation(e.target.value)}
           >
-            <option hidden value="Default">
+            <option hidden value="">
               Select a Location
             </option>
-            <option value="chitra">Chitra</option>
-            <option value="burnpur">Burnpur</option>
-            <option value="bnr">Bhagat Singh Chowk</option>
-            <option value="newTown">New Town</option>
-            <option value="asansol">Asansol Bus Stand</option>
+            <option value="Chitra">Chitra</option>
+            <option value="Burnpur">Burnpur</option>
+            <option value="Bhagat Singh Chowk">Bhagat Singh Chowk</option>
+            <option value="New Town">New Town</option>
+            <option value="Asansol">Asansol Bus Stand</option>
           </select>
         </div>
 
@@ -84,20 +131,21 @@ const BookTrip = () => {
             Pick-Up Point
           </label>
           <select
+            required
             name="dropLocationSelect"
             id="dropLocationSelect"
             className="p-2 h-full w-full rounded border-2 outline-none border-Gbay-700"
-            defaultValue={"Default"}
+            value={dropLocation}
             onChange={(e) => setDropLocation(e.target.value)}
           >
-            <option hidden value="Default">
+            <option hidden value="">
               Select a Location
             </option>
-            <option value="chitra">Chitra</option>
-            <option value="burnpur">Burnpur</option>
-            <option value="bnr">Bhagat Singh Chowk</option>
-            <option value="newTown">New Town</option>
-            <option value="asansol">Asansol Bus Stand</option>
+            <option value="Chitra">Chitra</option>
+            <option value="Burnpur">Burnpur</option>
+            <option value="Bhagat Singh Chowk">Bhagat Singh Chowk</option>
+            <option value="New Town">New Town</option>
+            <option value="Asansol">Asansol Bus Stand</option>
           </select>
         </div>
 
@@ -111,10 +159,12 @@ const BookTrip = () => {
             Pick-Up Date
           </label>
           <input
+            required
             type="date"
             id="pickDate"
             className="p-2 h-full w-full rounded border-2 outline-none border-Gbay-700"
-            onChange={handlePickupDate}
+            value={pickupDate}
+            onChange={(e) => setPickupDate(e.target.value)}
           />
         </div>
 
@@ -128,12 +178,18 @@ const BookTrip = () => {
             Drop-In Date
           </label>
           <input
+            required
             type="date"
             id="dropDate"
             className="p-2 h-full w-full rounded border-2 outline-none border-Gbay-700"
             value={dropDate}
-            onChange={(e) => setDropDate(new Date(e.target.value))}
+            onChange={(e) => {
+              setDropDate(e.target.value);
+            }}
           />
+          {/* {console.log(
+            `from: ${pickupLocation}, to: ${dropLocation}, pickOn: ${pickupDate}, dropOn: ${dropDate}, in: ${car}`
+          )} */}
         </div>
         <div className="h-20 gap-2 flex flex-col items-start justify-end col-span-1">
           <Button title="Search" />
@@ -141,6 +197,6 @@ const BookTrip = () => {
       </form>
     </section>
   );
-};
+});
 
 export default BookTrip;

@@ -3,9 +3,12 @@ import { IoCarSportSharp } from "react-icons/io5";
 import { MdOutlineSupportAgent } from "react-icons/md";
 import { PiCarProfileDuotone } from "react-icons/pi";
 
-const PlanSection = () => {
+const PlanSection = React.forwardRef((props, ref) => {
   return (
-    <section className="font-rubik pt-16 pb-24 flex flex-col items-center text-center space-y-10">
+    <section
+      ref={ref}
+      className="font-rubik pt-16 pb-24 flex flex-col items-center text-center space-y-10"
+    >
       <span>
         <h3 className="text-2xl font-bold my-4">Plan your trip now</h3>
         <h2 className="text-5xl font-bold">Quick & easy Car rental</h2>
@@ -53,6 +56,6 @@ const PlanSection = () => {
       </div>
     </section>
   );
-};
+});
 
 export default PlanSection;

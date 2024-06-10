@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useRef } from "react";
 import HeroSection from "../components/LandingComponents/HeroSection";
-import city from "../static/hero-bg.png";
+import city from "/static/hero-bg.png";
 import BookTrip from "../components/LandingComponents/BookTrip";
 import PlanSection from "../components/LandingComponents/PlanSection";
 import VehicleModel from "../components/LandingComponents/VehicleModels";
@@ -10,6 +10,8 @@ import TestimonialSection from "../components/LandingComponents/TestimonialSecti
 import FAQ from "../components/LandingComponents/FAQ";
 
 const LandingPage = () => {
+  const bookTripRef = useRef();
+  const planSectionRef = useRef();
   return (
     <div className="mx-40">
       <img
@@ -18,9 +20,11 @@ const LandingPage = () => {
         width={600}
         className="opacity-25 absolute left-0 -top-10 z-0"
       />
-      <HeroSection />
-      <BookTrip />
-      <PlanSection />
+      <HeroSection
+        refs={{ bookTrip: bookTripRef, planSection: planSectionRef }}
+      />
+      <BookTrip ref={bookTripRef} />
+      <PlanSection ref={planSectionRef} />
       <VehicleModel />
       <OfferSection />
       <ChooseUs />

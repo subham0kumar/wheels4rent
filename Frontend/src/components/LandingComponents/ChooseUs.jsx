@@ -12,7 +12,7 @@ const ChooseUs = () => {
         <TbWheel size={1400} color="#e2e0ff" />
       </div>
       <div className="pb-20 grid place-items-center">
-        <img src="src\static\GroupOfCars.png" alt="cars" className="z-50" />
+        <img src="/static/GroupOfCars.png" alt="cars" className="z-50" />
       </div>
       <main className="flex justify-between">
         <aside className="w-[40%] space-y-5 z-50">

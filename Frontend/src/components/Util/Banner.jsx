@@ -5,7 +5,7 @@ const Banner = ({ PageTitle }) => {
   return (
     <div className="text-Gbay-950 font-semibold font-rubik bg-Gbay-50 bg-opacity-30">
       <img
-        src="src/static/gWagon.jpg"
+        src="/static/gWagon.jpg"
         alt=""
         className="relative opacity-50 mix-blend-multiply"
       />
