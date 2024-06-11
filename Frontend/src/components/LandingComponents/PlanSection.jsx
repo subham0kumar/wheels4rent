@@ -7,13 +7,13 @@ const PlanSection = React.forwardRef((props, ref) => {
   return (
     <section
       ref={ref}
-      className="font-rubik pt-16 pb-24 flex flex-col items-center text-center space-y-10"
+      className="font-rubik pt-16 pb-24 flex flex-col items-center text-center lg:space-y-10"
     >
       <span>
         <h3 className="text-2xl font-bold my-4">Plan your trip now</h3>
-        <h2 className="text-5xl font-bold">Quick & easy Car rental</h2>
+        <h2 className="lg:text-5xl text-4xl font-bold">Quick & easy Car rental</h2>
       </span>
-      <div className="flex gap-40 mx-4">
+      <div className="flex flex-col lg:flex-row lg:gap-40 mx-4">
         <span className="flex flex-col items-center justify-center space-y-3">
           <div
             className="mt-14 mb-10 bg-Gbay-200 p-6"

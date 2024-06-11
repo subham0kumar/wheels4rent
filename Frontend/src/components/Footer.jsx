@@ -2,16 +2,21 @@ import React from "react";
 import Button from "./Util/Button";
 import { MdEmail } from "react-icons/md";
 import { FaPhone } from "react-icons/fa6";
+import { MdMyLocation } from "react-icons/md";
+import { FaPersonCircleCheck } from "react-icons/fa6";
+import { RiBloggerLine } from "react-icons/ri";
+import { CiMobile3 } from "react-icons/ci";
+import { IoCodeWorkingSharp } from "react-icons/io5";
 
 const Footer = () => {
   return (
     <>
-      <footer className="font-poppins grid grid-cols-4 gap-10 p-20">
-        <section>
-          <h3 className="text-2xl font-rubik mb-2">
+      <footer className="pt-10 font-poppins lg:text-left text-center grid lg:grid-cols-4 gap-10 lg:p-20">
+        <section className="px-10 flex flex-col lg:items-start items-center">
+          <h3 className="text-lg lg:text-2xl font-rubik mb-2">
             <span className="font-bold">CAR</span> Rental
           </h3>
-          <p>
+          <p className="text-sm">
             We offers a big range of vehicles for all your driving needs. We
             have the perfect car to meet your needs.
           </p>
@@ -26,8 +31,10 @@ const Footer = () => {
             </h4>
           </span>
         </section>
-        <section>
-          <h3 className="font-bold text-2xl font-rubik mb-2">COMPANY</h3>
+        <section className="flex flex-col lg:items-start items-center px-10">
+          <h3 className="font-bold text-lg lg:text-2xl font-rubik mb-2">
+            COMPANY
+          </h3>
           <ul className="flex flex-col gap-3">
             <li>Asansol</li>
             <li>Careers</li>
@@ -36,7 +43,7 @@ const Footer = () => {
             <li>How We Work</li>
           </ul>
         </section>
-        <section>
+        <section className="flex flex-col lg:items-start items-center px-10">
           <h3 className="font-bold text-2xl font-rubik mb-2">WORKING HOURS</h3>
           <ul className="flex flex-col gap-3">
             <li>Mon - Fri: 9:00AM - 9:00PM</li>
@@ -44,19 +51,21 @@ const Footer = () => {
             <li>Sun: Closed</li>
           </ul>
         </section>
-        <section>
-          <h3 className="font-bold text-2xl font-rubik mb-2">SUBSCRIPTION</h3>
-          <p className="mb-3">
+        <section className="flex flex-col lg:items-start items-center px-10">
+          <h3 className="font-bold text-lg lg:text-2xl font-rubik mb-2">
+            SUBSCRIPTION
+          </h3>
+          <p className="text-sm mb-3">
             Subscribe your Email address for latest news & updates.
           </p>
           <form
-            className="flex flex-col gap-3"
+            className="flex flex-col gap-3 mb-4"
             onSubmit={(e) => e.preventDefault()}
           >
             <input
               type="text"
               placeholder="Enter Your Email"
-              className="py-4 px-6"
+              className="py-4 px-2 lg:px-6"
             />
             <Button title="Submit" />
           </form>

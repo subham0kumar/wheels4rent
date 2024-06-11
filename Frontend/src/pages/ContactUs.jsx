@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Banner from "../components/Util/Banner";
 import ContactBanner from "../components/Util/ContactBanner";
 import Button from "../components/Util/Button";
@@ -8,11 +8,35 @@ import { MdEmail } from "react-icons/md";
 import { HiOutlineMailOpen } from "react-icons/hi";
 
 const ContactUs = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [showConfirm, setShowConfirm] = useState(false);
+
+  const handleForm = (e) => {
+    e.preventDefault();
+    setShowConfirm(true);
+    setTimeout(() => {
+      setShowConfirm(false);
+    }, 2000);
+  };
   return (
     <div>
       <Banner PageTitle={"Contact Us"} />
+      <div
+        className={`flex justify-center gap-2 py-3 px-10 text-xl font-semibold text-Gbay-950 bg-Gbay-200 bg-opacity-75 mb-2
+        ${showConfirm ? "" : "hidden"}`}
+      >
+        Thanks <h4 className="text-Gbay-500"> {name} </h4> for contacting us
+      </div>
       <main className="font-poppins grid grid-cols-2 gap-20 mx-40 my-20">
-        <aside className="space-y-6 pr-32">
+        <img
+          src="/static/worldBG.png"
+          alt="worldBG"
+          width={1300}
+          className="opacity-10 absolute left-32 top-[25rem]"
+        />
+        <aside className="space-y-6 pr-32 z-10">
           <h1 className="font-rubik text-5xl font-bold">
             Need additional information?
           </h1>
@@ -35,8 +59,8 @@ const ContactUs = () => {
             </h3>
           </div>
         </aside>
-        <aside>
-          <form className="space-y-4">
+        <aside className="z-10">
+          <form className="space-y-4" onSubmit={handleForm}>
             <div className="flex flex-col gap-2">
               <label htmlFor="name" className="font-bold text-lg">
                 Full Name <b className="text-Gbay-700 font-bold text-xl">*</b>
@@ -46,6 +70,8 @@ const ContactUs = () => {
                 id="name"
                 placeholder="E.g. Jaun Dough"
                 className="outline-none h-12 px-4"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
               />
             </div>
             <div className="flex flex-col gap-2">
@@ -57,6 +83,8 @@ const ContactUs = () => {
                 id="email"
                 placeholder="youremail@example.com"
                 className="outline-none h-12 px-4"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <div className="flex flex-col gap-2">
@@ -64,11 +92,13 @@ const ContactUs = () => {
                 Your message{" "}
                 <b className="text-Gbay-700 font-bold text-xl">*</b>
               </label>
-              <input
+              <textarea
                 type="textarea"
                 id="message"
                 placeholder="Your message here.."
-                className="outline-none h-32 px-4"
+                className="outline-none h-32 px-4 py-2"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
               />
             </div>
             <div className="pt-4">

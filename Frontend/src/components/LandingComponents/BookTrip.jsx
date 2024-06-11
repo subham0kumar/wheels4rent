@@ -50,7 +50,7 @@ const BookTrip = React.forwardRef((props, ref) => {
   return (
     <section
       ref={ref}
-      className="w-full font-poppins py-10 my-10 shadow-[0_10px_15px_0_rgba(54,44,166,0.5)] rounded-lg container-concentric z-30"
+      className="w-full font-poppins py-6 my-10 shadow-[0_10px_15px_0_rgba(54,44,166,0.5)] rounded-lg container-concentric z-30"
     >
       <ReserveRideModal
         open={showModal}
@@ -63,7 +63,7 @@ const BookTrip = React.forwardRef((props, ref) => {
       <form
         id="bookRide"
         onSubmit={handleBookTrip}
-        className="grid grid-cols-3 grid-rows-2 gap-8 px-10 py-8"
+        className="grid lg:grid-cols-3 gap-8 px-10 py-8"
       >
         {/* Car Select  */}
         <div className="h-20 gap-2 flex flex-col items-start justify-center col-span-1">

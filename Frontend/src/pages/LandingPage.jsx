@@ -13,12 +13,12 @@ const LandingPage = () => {
   const bookTripRef = useRef();
   const planSectionRef = useRef();
   return (
-    <div className="mx-40">
+    <div className="lg:mx-40 mx-8">
       <img
         src={city}
         alt="city"
         width={600}
-        className="opacity-25 absolute left-0 -top-10 z-0"
+        className="opacity-25 absolute left-0 -top-10 lg:block hidden"
       />
       <HeroSection
         refs={{ bookTrip: bookTripRef, planSection: planSectionRef }}

@@ -8,9 +8,9 @@ const VehicleModel = () => {
 
   return (
     <section>
-      <div className="flex flex-col items-center font-rubik text-Gbay-950">
+      <div className="flex flex-col items-center text-center font-rubik text-Gbay-950">
         <h3 className="text-2xl font-bold mb-3">Vehicle Models</h3>
-        <h1 className="text-5xl font-extrabold tracking-wider mb-3">
+        <h1 className="lg:text-5xl text-4xl font-extrabold tracking-wider mb-3">
           Our Rental Fleet
         </h1>
         <p>
@@ -18,8 +18,8 @@ const VehicleModel = () => {
           adventure or business trip
         </p>
       </div>
-      <div className="flex gap-7 items-start my-20">
-        <section className="h-full flex flex-col w-1/4 gap-3">
+      <div className="flex flex-col lg:flex-row gap-7 items-start my-20">
+        <section className="w-full h-full flex flex-col items-center lg:w-1/4 gap-3">
           {vehicleModels.map((car, index) => (
             <button
               key={index}
@@ -30,7 +30,7 @@ const VehicleModel = () => {
                 isSelected == index
                   ? "bg-Gbay-700 text-Gbay-50"
                   : "bg-Gbay-200 text-Gbay-950"
-              } text-left text-xl tracking-wide px-6 py-4 font-bold hover:bg-Gbay-700 hover:text-Gbay-50 border-Gbay-400 rounded transition-all duration-200 ease-in-out`}
+              } w-full text-center lg:text-left lg:text-xl tracking-wide px-6 py-2 lg:py-4 font-bold hover:bg-Gbay-700 hover:text-Gbay-50 border-Gbay-400 rounded transition-all duration-200 ease-in-out`}
             >
               {car.company} {car.model}
             </button>
@@ -41,7 +41,7 @@ const VehicleModel = () => {
             key={index}
             className={`${
               isSelected == index
-                ? "w-1/2 h-[26rem] bottom-0 relative"
+                ? "lg:w-1/2 w-[18.5rem] h-56 lg:h-[26rem] bottom-0 relative"
                 : "hidden"
             }`}
           >
@@ -55,12 +55,14 @@ const VehicleModel = () => {
         {vehicleModels.map((car, index) => (
           <div
             key={index}
-            className={`${isSelected == index ? "block w-1/4 " : "hidden"}`}
+            className={`${
+              isSelected == index ? "block w-full lg:w-1/4 " : "hidden"
+            }`}
           >
-            <table className="w-full text-md font-poppins h-full flex flex-col border-2 border-Gbay-700 mb-3">
+            <table className="w-full lg:text-md text-sm font-poppins h-full flex flex-col border-2 border-Gbay-700 mb-3">
               <tbody>
                 <tr className="flex gap-3 items-center justify-center bg-Gbay-700 text-Gbay-50 border-b-2 border-Gbay-700 px-6 py-2">
-                  <td className="text-2xl font-bold">₹ {car.pricePerDay} </td>
+                  <td className="lg:text-2xl text-xl font-bold">₹ {car.pricePerDay} </td>
                   <td className="font-semibold">/ rent per day</td>
                 </tr>
                 <tr className="flex justify-between border-b-2 border-Gbay-700 px-6 py-4">

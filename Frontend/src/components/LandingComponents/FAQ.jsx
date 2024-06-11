@@ -29,27 +29,27 @@ const FAQ = () => {
     },
   ];
   return (
-    <div className="spikes py-20">
-      <div className="font-poppins flex flex-col w-full items-start justify-center px-80">
+    <div className="spikes py-10 lg:py-20">
+      <div className="font-poppins flex flex-col w-full items-start justify-center px-8 lg:px-80">
         <aside className="text-center space-y-6 flex flex-col items-center">
-          <h3 className="text-2xl font-bold font-rubik">FAQ</h3>
-          <h1 className="text-5xl font-bold font-rubik">
+          <h3 className="text-lg lg:text-2xl font-bold font-rubik">FAQ</h3>
+          <h1 className="text-3xl lg:text-5xl font-bold font-rubik">
             Frequently Asked Questions
           </h1>
-          <p>
+          <p className="text-sm">
             Frequently Asked Questions About the Car Rental Booking Process on
             Our Website: Answers to Common Concerns and Inquiries.
           </p>
         </aside>
         <main className="shadow-[0_10px_15px_0_rgba(54,44,166,0.5)] w-full flex flex-col items-center mt-10">
           {freqAnsQues.map((que, index) => (
-            <div key = {index} className="w-full">
+            <div key={index} className="w-full">
               <button
                 className={`${
                   open == index
                     ? "bg-Gbay-600 text-Gbay-50 shadow-[0_10px_15px_0_rgba(54,44,166,0.5)]"
                     : "border-b-2 border-Gbay-200"
-                }  text-xl flex items-center justify-between w-full px-8 py-6 text-left font-semibold `}
+                }  text-sm lg:text-xl flex items-center justify-between w-full px-4 lg:px-8 py-6 text-left font-semibold gap-3`}
                 onClick={() => {
                   toggle(index);
                   setRotate(!rotate);
@@ -59,7 +59,9 @@ const FAQ = () => {
                 <FaAngleDown className={`${rotate ? "rotate-180" : ""}`} />
               </button>
               <Collapse isOpened={open == index ? true : false}>
-                <div className="py-4 px-10 text-justify">{que.ans}</div>
+                <div className="py-4 px-10 text-center text-sm lg:text-justify">
+                  {que.ans}
+                </div>
               </Collapse>
             </div>
           ))}
