@@ -25,7 +25,7 @@ const LandingPage = () => {
       />
       <BookTrip ref={bookTripRef} />
       <PlanSection ref={planSectionRef} />
-      <VehicleModel />
+      <VehicleModel refs={{ bookTripRef: bookTripRef }} />
       <OfferSection />
       <ChooseUs />
       <TestimonialSection />

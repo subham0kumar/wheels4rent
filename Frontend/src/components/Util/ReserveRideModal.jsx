@@ -20,10 +20,10 @@ const ReserveRideModal = ({ rideDetails, open, handleOpen }) => {
   return (
     <>
       <div
-        className={`rounded-xl shadow-modal absolute top-14 left-40 w-[80vw] bg-Gbay-100 z-40
+        className={`rounded-xl shadow-modal absolute top-14 left-4 lg:left-40 w-[92vw] lg:w-[80vw] bg-Gbay-100 z-40
             ${open ? "" : "hidden"}`}
       >
-        <span className="rounded-t-lg flex justify-between items-center bg-Gbay-500 py-5 px-10 text-2xl font-rubik font-bold text-textLight">
+        <span className="rounded-t-lg flex justify-between items-center bg-Gbay-500 py-5 lg:px-10 px-5 text-2xl font-rubik font-bold text-textLight">
           <h1>Complete Reservation</h1>
           <button
             onClick={() => handleOpen(false)}
@@ -36,7 +36,7 @@ const ReserveRideModal = ({ rideDetails, open, handleOpen }) => {
           <IoInformationCircle size={25} color="blue" />
           Please confirm your ride.
         </div>
-        <main className="flex text-center justify-between py-4 px-36 font-semibold">
+        <main className="flex flex-col lg:flex-row lg:text-center justify-between py-4 px-5 lg:px-36 font-semibold lg:gap-0 gap-20">
           <aside className="flex flex-col gap-6">
             <h1 className="text-xl">Location and Date</h1>
             <span>

@@ -42,9 +42,9 @@ const BookTrip = React.forwardRef((props, ref) => {
   };
 
   if (showModal) {
-    document.body.classList.add("overflow-y-hidden");
+    document.body.classList.add("lg:overflow-y-hidden");
   } else {
-    document.body.classList.remove("overflow-y-hidden");
+    document.body.classList.remove("lg:overflow-y-hidden");
   }
 
   return (

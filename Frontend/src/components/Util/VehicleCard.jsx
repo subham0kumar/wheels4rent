@@ -9,8 +9,8 @@ import Button from "./Button";
 const VehicleCard = ({ vehicle }) => {
   return (
     <>
-      <div className="font-poppins w-[25vw] rounded-md border-Gbay-300 border-2 p-6 m-4">
-        <div className="relative h-[15rem]">
+      <div className="font-poppins lg:w-[25vw] rounded-md border-Gbay-300 border-2 p-6 m-4">
+        <div className="relative h-44 lg:h-[15rem]">
           <img
             src={vehicle.imgUrl}
             alt="vehicle Image"

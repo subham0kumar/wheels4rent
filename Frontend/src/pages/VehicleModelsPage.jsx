@@ -13,7 +13,7 @@ const VehicleModelsPage = () => {
   return (
     <div>
       <Banner PageTitle={"Vehicle Models"} />
-      <div className="grid grid-cols-3 gap-6 my-20 mb-40 mx-40">
+      <div className="grid lg:grid-cols-3 gap-6 my-20 lg:mb-40 lg:mx-40">
         {data.map((car, index) => (
           <VehicleCard key={index} vehicle={car} />
         ))}

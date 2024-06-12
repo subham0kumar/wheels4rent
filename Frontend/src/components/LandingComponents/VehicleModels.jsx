@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { useVehicleState } from "../../Context/VehicleContext";
 
-const VehicleModel = () => {
+const VehicleModel = ({ refs }) => {
+  const scrollToSection = (sectionRef) => {
+    sectionRef.current.scrollIntoView({ behavior: "smooth" });
+  };
   const [isSelected, setIsSelected] = useState("");
 
   const { vehicleModels } = useVehicleState();
@@ -62,7 +65,9 @@ const VehicleModel = () => {
             <table className="w-full lg:text-md text-sm font-poppins h-full flex flex-col border-2 border-Gbay-700 mb-3">
               <tbody>
                 <tr className="flex gap-3 items-center justify-center bg-Gbay-700 text-Gbay-50 border-b-2 border-Gbay-700 px-6 py-2">
-                  <td className="lg:text-2xl text-xl font-bold">₹ {car.pricePerDay} </td>
+                  <td className="lg:text-2xl text-xl font-bold">
+                    ₹ {car.pricePerDay}{" "}
+                  </td>
                   <td className="font-semibold">/ rent per day</td>
                 </tr>
                 <tr className="flex justify-between border-b-2 border-Gbay-700 px-6 py-4">
@@ -94,7 +99,12 @@ const VehicleModel = () => {
                 </tr>
               </tbody>
             </table>
-            <button className="w-full text-center active:shadow-none active:bg-Gbay-500 active:translate-x-[5px] active:translate-y-[5px]  transition-all duration-100 ease-in-out text-xl tracking-widest px-6 py-3 font-bold bg-Gbay-700 text-Gbay-50 border-Gbay-400 rounded shadow-[5px_5px_0px_#aca5fc]">
+            <button
+              onClick={() => {
+                scrollToSection(refs.bookTripRef);
+              }}
+              className="w-full text-center active:shadow-none active:bg-Gbay-500 active:translate-x-[5px] active:translate-y-[5px]  transition-all duration-100 ease-in-out text-xl tracking-widest px-6 py-3 font-bold bg-Gbay-700 text-Gbay-50 border-Gbay-400 rounded shadow-[5px_5px_0px_#aca5fc]"
+            >
               Reserve Now
             </button>
           </div>

@@ -30,7 +30,7 @@ const Navbar = () => {
 
       {/* <======================= Mobile Navbaar =====================> */}
       <div
-        className={`w-screen left-0 top-0 fixed p-6 flex-col items-center justify-start gap-10 h-screen bg-Gbay-200 z-20 transition-all duration-300 ease-in-out ${
+        className={`w-screen left-0 top-0 fixed p-6 flex-col items-center justify-start gap-10 h-screen bg-Gbay-100 z-20 transition-all duration-300 ease-in-out ${
           showNav ? "translate-x-0" : "-translate-x-full"
         }`}
       >
