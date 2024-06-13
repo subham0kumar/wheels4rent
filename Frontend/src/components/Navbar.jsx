@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import carIcon from "/static/Icons/car-2.png";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoCloseCircleOutline } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [showNav, setShowNav] = useState(false);
@@ -43,22 +44,22 @@ const Navbar = () => {
           <ul className="text-Gbay-900 flex flex-col gap-10 text-xl lg:text-3xl items-center">
             {" "}
             <li className="hover:underline underline-offset-4">
-              <a href="/">Home</a>
+              <Link to={"/"}>Home</Link>
             </li>
             <li className="hover:underline underline-offset-4">
-              <a href="/about">About</a>
+              <Link to={"/about"}>About</Link>
             </li>
             <li className="hover:underline underline-offset-4">
-              <a href="/models">Vehicle Models</a>
+              <Link to={"/models"}>Vehicle Models</Link>
             </li>
             <li className="hover:underline underline-offset-4">
-              <a href="/testimonials">Testimonials</a>
+              <Link to={"/testimonials"}>Testimonials</Link>
             </li>
             <li className="hover:underline underline-offset-4">
-              <a href="/team">Our Team</a>
+              <Link to={"/team"}>Our Team</Link>
             </li>
             <li className="hover:underline underline-offset-4">
-              <a href="/contact">Contact</a>
+              <Link to={"/contact"}>Contact</Link>
             </li>
           </ul>
         </div>
@@ -68,22 +69,22 @@ const Navbar = () => {
       <section className="lg:block hidden middle-section">
         <ul className="flex gap-10">
           <li className={linkStyle}>
-            <a href="/">Home</a>
+            <Link to={"/"}>Home</Link>
           </li>
           <li className={linkStyle}>
-            <a href="/about">About</a>
+            <Link to={"/about"}>About</Link>
           </li>
           <li className={linkStyle}>
-            <a href="/models">Vehicle Models</a>
+            <Link to={"/models"}>Vehicle Models</Link>
           </li>
           <li className={linkStyle}>
-            <a href="/testimonials">Testimonials</a>
+            <Link to={"/testimonials"}>Testimonials</Link>
           </li>
           <li className={linkStyle}>
-            <a href="/team">Our Team</a>
+            <Link to={"/team"}>Our Team</Link>
           </li>
           <li className={linkStyle}>
-            <a href="/contact">Contact</a>
+            <Link to={"/contact"}>Contact</Link>
           </li>
         </ul>
       </section>
