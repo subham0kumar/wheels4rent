@@ -2,7 +2,7 @@
 
 ## Live Site
 
-Visit the live site at: [https://wheels4rent.netlify.app/](https://wheels4rent.netlify.app/)
+## Visit the live site at: [https://wheels4rent.netlify.app/](https://wheels4rent.netlify.app/)
 
 
 ## Description
