@@ -74,10 +74,11 @@ const ContactUs = () => {
                 Full Name <b className="text-Gbay-700 font-bold text-xl">*</b>
               </label>
               <input
+                required
                 type="text"
                 id="name"
                 placeholder="E.g. Jaun Dough"
-                className="lg:w-full w-72 mx-8 lg:mx-0 outline-none h-12 px-4"
+                className="lg:w-full w-[82vw] mx-8 lg:mx-0 outline-none h-12 px-4"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
@@ -87,10 +88,11 @@ const ContactUs = () => {
                 E-mail <b className="text-Gbay-700 font-bold text-xl">*</b>
               </label>
               <input
+                required
                 type="email"
                 id="email"
                 placeholder="youremail@example.com"
-                className="lg:w-full w-72 mx-8 lg:mx-0 outline-none h-12 px-4"
+                className="lg:w-full w-[82vw] mx-8 lg:mx-0 outline-none h-12 px-4"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
@@ -104,10 +106,11 @@ const ContactUs = () => {
                 <b className="text-Gbay-700 font-bold text-xl">*</b>
               </label>
               <textarea
+                required
                 type="textarea"
                 id="message"
                 placeholder="Your message here.."
-                className="lg:w-full w-72 mx-8 lg:mx-0 outline-none h-32 px-4 py-2"
+                className="lg:w-full w-[82vw] mx-8 lg:mx-0 outline-none h-32 px-4 py-2"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
               />

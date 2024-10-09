@@ -8,18 +8,20 @@ import OfferSection from "../components/LandingComponents/OfferSection";
 import ChooseUs from "../components/LandingComponents/ChooseUs";
 import TestimonialSection from "../components/LandingComponents/TestimonialSection";
 import FAQ from "../components/LandingComponents/FAQ";
+import AuthModal from "../components/Authentication/AuthModal";
 
 const LandingPage = () => {
   const bookTripRef = useRef();
   const planSectionRef = useRef();
   return (
-    <div className="lg:mx-40 mx-8">
+    <div className="relative lg:mx-40 mx-8">
       <img
         src={city}
         alt="city"
         width={600}
         className="opacity-25 absolute left-0 -top-10 lg:block hidden"
       />
+      <AuthModal />
       <HeroSection
         refs={{ bookTrip: bookTripRef, planSection: planSectionRef }}
       />
